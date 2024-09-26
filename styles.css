@@ -1,0 +1,209 @@
+:root {
+    --primary-color: #C08552; /* Sierra */
+    --background-color: #FFFFFF; /* White */
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: var(--background-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+.project {
+    border: 2px solid var(--primary-color);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 500px;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0.5;
+    width: 100%;
+}
+
+a {
+    color: var(--primary-color);
+    display: block; /* Makes the link take the full width of the line */
+    margin: 5px 0;
+}
+
+i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Additional styles for resume download link */
+#resume a {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block; /* Keeps the button centered and styled */
+}
+
+#contact a {
+    display: inline-block;
+    margin: 5px 10px;
+    color: var(--primary-color); /* Sierra color as defined earlier */
+    text-decoration: none; /* Removes underline from links */
+}
+
+#contact i {
+    font-size: 24px; /* Adjust size as needed */
+    vertical-align: middle;
+    margin-right: 8px; /* Adds spacing between the icon and text */
+}
+
+#contact a:hover {
+    color: darken(var(--primary-color), 10%); /* Darkens the icon and text on hover */
+}
+
+
+#resume a:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+#skills {
+    background-color: #f4f4f4; /* Light grey background for the section */
+    color: #312828; /* Dark grey text for readability */
+    padding: 20px;
+    text-align: center;
+}
+
+#skills h1 {
+    font-size: 2.5em; /* Makes the font larger */
+    color: var(--primary-color);
+    font-weight: bold; /* Makes the font bolder */
+    text-decoration: underline; /* Adds an underline to emphasize the section header */
+    text-decoration-color: var(--primary-color); /* Uses the primary color for the underline */
+}
+
+#skills ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+}
+
+#skills li {
+    margin-bottom: 10px; /* Adds space between items */
+    font-size: 16px; /* Adjusts font size for visibility */
+}
+
+#projects {
+    text-align: center;
+    padding: 20px;
+}
+
+#projects h1 {
+    color: var(--primary-color); /* Ensuring the title stands out, assuming a variable for primary color */
+    margin-bottom: 20px; /* Adds some space below the title */
+}
+
+.project-container {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+
+.project {
+    border: 2px solid var(--primary-color); /* Sierra color, for consistency */
+    margin: 10px;
+    padding: 20px;
+    flex-basis: 45%; /* Adjust this percentage based on your design preference */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds subtle shadow for depth */
+}
+
+@media (max-width: 768px) {
+    .project {
+        flex-basis: 100%; /* Full width on smaller screens */
+    }
+}
+
+#projects h1 {
+    font-size: 2.5em; /* Makes the font larger */
+    font-weight: bold; /* Makes the font bolder */
+    text-decoration: underline; /* Adds an underline to emphasize the section header */
+    text-decoration-color: var(--primary-color); /* Uses the primary color for the underline */
+}
+
+#about h1 {
+    font-size: 2.5em; /* Makes the font larger */
+    font-weight: bold; /* Makes the font bolder */
+    text-decoration-color: var(--head-color); /* Uses the primary color for the underline */
+}
+
+#experience {
+    text-align: center;
+    padding: 20px;
+}
+
+#experience h1 {
+    font-size: 2.5em; /* Makes the font larger */
+    font-weight: bold; /* Makes the font bolder */
+    text-decoration: underline; /* Adds an underline to emphasize the section header */
+    text-decoration-color: var(--primary-color); /* Uses the primary color for the underline */
+    color: var(--primary-color);
+}
+
+#skills {
+    background-color: #f4f4f4; /* Light grey background for the section */
+    color: #312828; /* Dark grey text for readability */
+    padding: 20px;
+    text-align: center;
+}
+
+#skills h1 {
+    font-size: 2.5em; /* Larger font for section title */
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+}
+
+#skills ul {
+    list-style-type: none; /* No bullet points */
+    padding: 0;
+}
+
+#skills li {
+    margin-bottom: 10px; /* space between each item */
+    font-size: 16px; /* Adjusts font size */
+}
