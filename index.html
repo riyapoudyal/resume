@@ -1,110 +1,646 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riya Poudyal's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For icons -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Riya Poudyal is a Business Technical Analyst with experience in product delivery, systems integration, testing, documentation, and data-driven decision-making." />
+  <title>Riya Poudyal | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --text-strong: #0f172a;
+      --text-soft: #475569;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --border-strong: #cbd5e1;
+      --surface: #ffffff;
+      --surface-soft: #f8fafc;
+      --nav-bg: rgba(255, 255, 255, 0.95);
+      --primary: #2563eb;
+      --primary-soft: #dbeafe;
+      --primary-text: #1d4ed8;
+      --contact-bg: #0f172a;
+      --contact-surface: #1e293b;
+      --contact-border: #334155;
+      --contact-text: #ffffff;
+      --contact-muted: #cbd5e1;
+      --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.04);
+      --shadow-hover: 0 14px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    body.dark-mode {
+      --bg: #0b1120;
+      --text: #e2e8f0;
+      --text-strong: #f8fafc;
+      --text-soft: #cbd5e1;
+      --muted: #94a3b8;
+      --border: #1e293b;
+      --border-strong: #334155;
+      --surface: #111827;
+      --surface-soft: #0f172a;
+      --nav-bg: rgba(15, 23, 42, 0.9);
+      --primary: #60a5fa;
+      --primary-soft: rgba(96, 165, 250, 0.15);
+      --primary-text: #93c5fd;
+      --contact-bg: #020617;
+      --contact-surface: #0f172a;
+      --contact-border: #1e293b;
+      --contact-text: #f8fafc;
+      --contact-muted: #cbd5e1;
+      --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.28);
+      --shadow-hover: 0 14px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text-strong);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--text-strong);
+      border-radius: 999px;
+      padding: 0.65rem 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--text-strong);
+    }
+
+    .hero-text p {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      max-width: 650px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge {
+      background: var(--primary-soft);
+      color: var(--primary-text);
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      padding: 0.85rem 1.2rem;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text-strong);
+      border: 1px solid var(--border-strong);
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.18);
+    }
+
+    .hero-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card p {
+      color: rgba(255,255,255,0.92);
+      font-size: 0.98rem;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-strong);
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .experience-card h3,
+    .project-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-strong);
+    }
+
+    .role-meta {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .card p {
+      color: var(--text-soft);
+      margin-bottom: 1rem;
+    }
+
+    details {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0.8rem 1rem;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--primary);
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details ul {
+      margin-top: 0.9rem;
+      padding-left: 1.2rem;
+      color: var(--text-soft);
+    }
+
+    details li {
+      margin-bottom: 0.55rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.25rem;
+    }
+
+    .skill-box h3 {
+      margin-bottom: 0.75rem;
+      color: var(--text-strong);
+      font-size: 1rem;
+    }
+
+    .skill-box p {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .contact-box {
+      background: var(--contact-bg);
+      color: var(--contact-text);
+      border-radius: 24px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .contact-box p {
+      color: var(--contact-muted);
+      margin: 0.8rem auto 1.4rem;
+      max-width: 600px;
+    }
+
+    .contact-box .section-title {
+      color: white;
+      margin-bottom: 0;
+    }
+
+    .project-actions {
+      margin-top: 1rem;
+    }
+
+    .project-actions details {
+      background: var(--surface-soft);
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      text-decoration: none;
+      color: var(--contact-text);
+      background: var(--contact-surface);
+      border: 1px solid var(--contact-border);
+      padding: 0.9rem 1.2rem;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 3.5rem;
+      }
+
+      .hero-text h1 {
+        font-size: 2.3rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
+      .theme-toggle {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="riyaPoudyal_resume" target="_blank">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="about">
-        <h1>Hi, I am Riya Poudyal</h1>
-        <p>A Computer Information Systems student minoring in Business Administration with a strong academic background and leadership skills. I'm eager to apply my diverse experiences towards professional growth.</p>
-    </section>
-    
-    <section id="projects">
-        <h1>Projects</h1> <!-- Title for the projects section -->
-        <div class="project-container"> <!-- Container for the projects -->
-            <div class="project">
-                <h2>Library Management App | SQL, HTML/CSS </h2>
-                <p>Implemented object-oriented programming principles to develop a library management system, enhancing user interaction and data management.</p>
-            </div>
-            <div class="project">
-                <h2>Protiviti Automation Project | Ui Path, RPA</h2>
-                <p>Collaborated on a robotic process automation project to streamline data transfer from IMDb to Excel using UiPath, improving data accuracy and efficiency.</p>
-            </div>
-            <!-- More projects can be added here -->
-                <div class="project-container">
-                    <div class="project">
-                        <h2>Weather Website | SQL, HTML/CSS</h2>
-                        <p>Developed a data-driven weather website utilizing SQL to query and manage real-time weather data efficiently, improving query performance by 30%.</p>
-                    </div>
-                    <div class="project">
-                        <h2>Maze Game Project | Assembly Language</h2>
-                        <p>Applied low-level programming for efficient optimization of CPU instructions for a 20% reduction in game runtime.</p>
-                    </div>
-                    <div class="project">
-                        <h2>Library Management App | Python, SQL</h2>
-                        <p>Designed and implemented a console-based library management system using Python and SQL, improving system efficiency by 25%.</p>
-                    </div>
-                </div>
-            </section>
-        
-            <section id="experience">
-                <h1>Experience</h1>
-                <div class="experience-container">
-                    <div class="experience">
-                        <h2>Global Services Assistant, Illinois Tech</h2>
-                        <p>Collaborated with cross-functional teams to identify system inefficiencies, resulting in a 37% reduction in administrative workload.</p>
-                    </div>
-                    <div class="experience">
-                        <h2>SOAR Leader, Illinois Tech</h2>
-                        <p>Analyzed engagement metrics to refine marketing strategies, increasing event participation by 15%.</p>
-                    </div>
-                    <div class="experience">
-                        <h2>Program Assistant, Illinois Tech</h2>
-                        <p>Oversaw record management for 15 Student Ambassadors, optimizing workflows and ensuring accurate data coordination.</p>
-                    </div>
-                </div>
-            </section>
-            
-    
-    
-    <section id="skills">
-        <h1>Skills</h1>
-        <ul>
-            <li><strong>Languages:</strong> Python, Java, SQL, Assembly Language, HTML/CSS</li>
-            <li><strong>Developer Tools:</strong> Git, Visual Studio Code (VS Code), MIPS, MySQL</li>
-            <li><strong>Frameworks:</strong> UiPath</li>
-            <li><strong>Platforms:</strong> x86 Emulators, Linux-based Systems</li>
-            <li><strong>Other Skills:</strong> Debugging, RPA, Database Optimization</li>
-        </ul>
-    </section>
-    
-            
-        </ul>
-    </section>
-    
-    <section id="contact">
-        <h1>Contact Me</h1>
-        <p>You can reach me via:</p>
-        <a href="mailto:poudyalriya@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-        <a href="https://www.linkedin.com/in/riya-poudyal/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    </section>
+  <header>
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+      <div class="logo">Riya Poudyal</div>
+      <ul class="nav-links">
+        <li><a href="#about">Home</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark and light mode">
+            <i class="fas fa-moon"></i>
+            <span>Dark Mode</span>
+          </button>
+        </li>
+      </ul>
     </nav>
-    
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="hero-text">
+        <h1>Hi, I’m Riya Poudyal</h1>
+        <p>
+          I’m a Business Technical Analyst with experience in product delivery, system integrations, testing, documentation, and data-driven decision-making. I enjoy translating business needs into structured requirements, validating system outputs, and helping cross-functional teams deliver reliable, user-focused solutions.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge">Business Analysis</span>
+          <span class="badge">Systems & Integrations</span>
+          <span class="badge">Data Validation</span>
+          <span class="badge">Cross-Functional Delivery</span>
+        </div>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="Resume_Riya Poudyal_2026.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt"></i> View Resume</a>
+          <a class="btn btn-secondary" href="#experience"><i class="fas fa-briefcase"></i> View Experience</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/riya-poudyal/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>What I bring</h3>
+        <p>
+          Experience across enterprise systems, workflow analysis, QA support, reporting, and stakeholder coordination - with a foundation in analytics, documentation, and process improvement.
+        </p>
+      </div>
     </section>
-    
-    
-        
+
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-subtitle">Professional experience aligned with business analysis, systems thinking, documentation, testing, and cross-functional coordination.</p>
+
+      <div class="card-grid">
+        <div class="card experience-card">
+          <h3>Business Technical Analyst</h3>
+          <div class="role-meta">McDonald’s · May 2025 – December 2025</div>
+          <p>Improved delivery readiness across enterprise initiatives by translating business needs into structured workflows, acceptance criteria, and validation logic across integrated systems.</p>
+          <details>
+            <summary>See what I did</summary>
+            <ul>
+              <li>Owned functional documentation and AI-enabled workflows that improved execution clarity across high-volume enterprise initiatives.</li>
+              <li>Partnered with engineering and QA to validate data accuracy and system outputs across complex platforms, helping catch issues before release.</li>
+              <li>Built and maintained delivery trackers and reports in Excel, JIRA, and Confluence to improve visibility into status, dependencies, and release risk.</li>
+              <li>Supported upstream and downstream integration changes to keep data flows aligned across releases.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="card experience-card">
+          <h3>Junior Developer</h3>
+          <div class="role-meta">Vigno Inc. · February 2025 – May 2025</div>
+          <p>Improved workflow reliability by identifying process gaps, shaping functional enhancements, and validating solutions end to end.</p>
+          <details>
+            <summary>See what I did</summary>
+            <ul>
+              <li>Analyzed end-to-end business workflows to identify data gaps, inconsistencies, and improvement opportunities.</li>
+              <li>Translated business needs into functional enhancements and supported end-to-end testing and validation.</li>
+              <li>Produced concise documentation covering findings, risks, and recommendations for technical and non-technical audiences.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="card experience-card">
+          <h3>Associate Program Manager</h3>
+          <div class="role-meta">International Students Learning · July 2023 – May 2024</div>
+          <p>Supported large-scale program execution for 500+ participants by coordinating timelines, communications, and workstreams across operations.</p>
+          <details>
+            <summary>See what I did</summary>
+            <ul>
+              <li>Coordinated operational programs supporting 500+ participants across multiple timelines and workstreams.</li>
+              <li>Synthesized qualitative and quantitative data into summaries and reports used for planning and process improvement.</li>
+              <li>Served as a central coordination point between leadership and cross-functional teams.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">Selected projects that reflect my work in API integration, automation, SQL, validation logic, and data-focused problem solving.</p>
+
+      <div class="card-grid">
+        <div class="card project-card">
+          <h3>University Event Calendar Website</h3>
+          <div class="role-meta">Human-Computer Interaction, API Integration · August 2024</div>
+          <p>Built a web application that ingested external API data for real-time display and filtering, with attention to consistent mappings, validation logic, and user-facing accuracy.</p>
+          <div class="project-actions">
+            <details>
+              <summary>View project highlights</summary>
+              <ul>
+                <li>Integrated external API data into a user-facing interface for real-time updates.</li>
+                <li>Defined mappings and validation rules to keep displayed information accurate and consistent.</li>
+                <li>Focused on usability by supporting filtering and cleaner event discovery.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <h3>Weather Website</h3>
+          <div class="role-meta">SQL, HTML/CSS · January 2024</div>
+          <p>Designed normalized database schemas and wrote SQL queries to support reporting, trend analysis, and data validation while improving performance through indexing and schema optimization.</p>
+          <div class="project-actions">
+            <details>
+              <summary>View project highlights</summary>
+              <ul>
+                <li>Designed tables and relationships to support cleaner, more reliable weather data storage.</li>
+                <li>Used SQL queries for analysis, reporting, and validation of incoming data.</li>
+                <li>Improved efficiency through indexing and schema optimization.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <h3>RPA with Protiviti</h3>
+          <div class="role-meta">UiPath, Automation, Data Extraction · August 2022</div>
+          <p>Automated extraction and validation of structured and semi-structured data, reducing manual effort by 40% while improving reliability through exception handling and logging.</p>
+          <div class="project-actions">
+            <details>
+              <summary>View project highlights</summary>
+              <ul>
+                <li>Automated repetitive extraction tasks using UiPath.</li>
+                <li>Reduced manual effort by 40% through workflow automation.</li>
+                <li>Added exception handling and logging to improve reliability and auditability.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h3>Analytics & Data</h3>
+          <p>SQL (SELECT, JOIN, GROUP BY), data validation, reporting, trend analysis, quality checks</p>
+        </div>
+        <div class="skill-box">
+          <h3>Systems & Process</h3>
+          <p>Requirements gathering, workflow documentation, system analysis, root-cause analysis, QA/UAT, defect triage</p>
+        </div>
+        <div class="skill-box">
+          <h3>Tools & Platforms</h3>
+          <p>Excel, PowerPoint, Power BI, JIRA, Confluence, Power Apps, Salesforce</p>
+        </div>
+        <div class="skill-box">
+          <h3>Collaboration</h3>
+          <p>Cross-functional stakeholder engagement, technical documentation, leadership communication, delivery coordination</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <h2 class="section-title">Let’s Connect</h2>
+        <p>I’m always open to opportunities, collaborations, and conversations around technology, business, and operations.</p>
+        <div class="contact-links">
+          <a href="mailto:poudyalriya@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://www.linkedin.com/in/riya-poudyal/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Riya Poudyal. All rights reserved.</p>
+  </footer>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeLabel = themeToggle.querySelector('span');
+    const themeIcon = themeToggle.querySelector('i');
+
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    function applyTheme(theme) {
+      const isDark = theme === 'dark';
+      document.body.classList.toggle('dark-mode', isDark);
+      themeLabel.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+      themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+      localStorage.setItem('theme', theme);
+    }
+
+    applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.body.classList.contains('dark-mode');
+      applyTheme(isDark ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
